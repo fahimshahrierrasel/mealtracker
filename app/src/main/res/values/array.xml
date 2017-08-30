@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="search_option">
+        <item>Name</item>
+        <item>Floor Number</item>
+        <item>Bed Number</item>
+        <item>Mobile Number</item>
+        <item>Permit Number</item>
+    </string-array>
+
+    <string-array name="meal_type">
+        <item>Bangla</item>
+        <item>Indian</item>
+    </string-array>
+</resources>

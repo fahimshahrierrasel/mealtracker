@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Meal Tracker</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_customer_register">Registration</string>
+    <string name="features_image">Features Image</string>
+    <string name="feature_name">Feature Name</string>
+    <string name="user_registration">User Registration</string>
+    <string name="floor_no">Floor No</string>
+    <string name="bed_no">Bed No</string>
+    <string name="mobile_no">Mobile No</string>
+    <string name="permit_no">Permit No</string>
+    <string name="register_customer">Register</string>
+    <string name="customer_name">Customer Name</string>
+    <string name="customer_image">Customer Image</string>
+    <string name="name_placeholder">Name: %1$s</string>
+    <string name="floor_no_placeholder">Floor No: %1$s</string>
+    <string name="bed_no_placeholder">Bed No: %1$s</string>
+    <string name="mobile_no_placeholder">Mobile No: %1$s</string>
+    <string name="permit_no_placeholder">Permit No: %1$s</string>
+    <string name="search_options">Search Options</string>
+    <string name="title_activity_customer_details">Customer Details</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="lorem_ipsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam maecenas sed enim ut sem viverra aliquet eget. Risus feugiat in ante metus dictum at tempor commodo. Consectetur libero id faucibus nisl tincidunt eget nullam non. A erat nam at lectus urna duis convallis. Et netus et malesuada fames ac turpis egestas sed. Volutpat maecenas volutpat blandit aliquam. Viverra accumsan in nisl nisi scelerisque. Nec dui nunc mattis enim ut. Faucibus pulvinar elementum integer enim neque volutpat ac tincidunt vitae. Donec ac odio tempor orci dapibus ultrices. Consectetur lorem donec massa sapien faucibus. Tempus egestas sed sed risus pretium quam vulputate dignissim.
+
+        Amet cursus sit amet dictum sit amet justo donec. Enim nunc faucibus a pellentesque sit. Dui ut ornare lectus sit amet est. Elementum nibh tellus molestie nunc non blandit massa. Laoreet non curabitur gravida arcu ac tortor dignissim convallis. Elementum integer enim neque volutpat ac. Iaculis urna id volutpat lacus laoreet non curabitur. Dictum non consectetur a erat nam. Orci nulla pellentesque dignissim enim sit. Blandit cursus risus at ultrices mi tempus imperdiet nulla. Diam donec adipiscing tristique risus nec. Gravida in fermentum et sollicitudin ac. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus sed. Tortor id aliquet lectus proin.
+
+        Turpis egestas maecenas pharetra convallis posuere morbi. Diam in arcu cursus euismod. Augue lacus viverra vitae congue eu consequat. Volutpat ac tincidunt vitae semper quis lectus nulla at. Nunc aliquet bibendum enim facilisis gravida neque. Cursus turpis massa tincidunt dui ut ornare lectus sit amet. Non diam phasellus vestibulum lorem sed risus ultricies tristique nulla. Molestie ac feugiat sed lectus vestibulum mattis. Sed turpis tincidunt id aliquet risus feugiat in ante metus. Amet consectetur adipiscing elit ut aliquam purus sit amet luctus. Tempus imperdiet nulla malesuada pellentesque. Magna fermentum iaculis eu non diam phasellus vestibulum. Vitae et leo duis ut diam quam nulla porttitor massa. Sed elementum tempus egestas sed. Vel quam elementum pulvinar etiam non quam lacus. Ullamcorper a lacus vestibulum sed arcu.
+    </string>
+</resources>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/customer_name_text_input_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp">
+
+            <EditText
+                android:id="@+id/meal_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:drawableStart="@drawable/ic_person_black_24dp"
+                android:ems="10"
+                android:hint="@string/customer_name"
+                android:inputType="textPersonName" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/floor_no_text_input_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/customer_name_text_input_layout"
+            android:layout_centerHorizontal="true">
+
+            <EditText
+                android:id="@+id/floor_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:drawableStart="@drawable/ic_home_black_24dp"
+                android:ems="10"
+                android:hint="@string/floor_no" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/bed_no_text_input_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/floor_no_text_input_layout"
+            android:layout_centerHorizontal="true">
+
+            <EditText
+                android:id="@+id/bed_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:drawableStart="@drawable/ic_hotel_black_24dp"
+                android:ems="10"
+                android:hint="@string/bed_no" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/mobile_no_text_input_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bed_no_text_input_layout"
+            android:layout_centerHorizontal="true">
+
+            <EditText
+                android:id="@+id/mobile_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:drawableStart="@drawable/ic_smartphone_black_24dp"
+                android:ems="10"
+                android:hint="@string/mobile_no"
+                android:inputType="phone" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/permit_no_text_input_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mobile_no_text_input_layout"
+            android:layout_centerHorizontal="true">
+
+            <EditText
+                android:id="@+id/permit_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:drawableStart="@drawable/ic_credit_card_black_24dp"
+                android:ems="10"
+                android:hint="@string/permit_no" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/customer_registration_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/permit_no_text_input_layout"
+            android:layout_below="@+id/permit_no_text_input_layout"
+            android:text="@string/register_customer"
+            />
+
+    </RelativeLayout>
+
+
+</android.support.v4.widget.NestedScrollView>

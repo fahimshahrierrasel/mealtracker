@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/customer_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        card_view:cardCornerRadius="3dp"
+        card_view:cardElevation="5dp"
+        android:layout_margin="5dp">
+
+        <RelativeLayout
+            android:id="@+id/customer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/customer_image"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:background="#E2EBF4"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:contentDescription="@string/customer_image"
+                android:src="@drawable/boss" />
+
+            <TextView
+                android:id="@+id/customer_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/customer_layout_text_margin_top"
+                android:layout_marginStart="@dimen/customer_layout_text_margin_start"
+                android:textAlignment="textStart"
+                android:layout_toEndOf="@id/customer_image"
+                android:layout_centerHorizontal="true"
+                android:text="@string/customer_name" />
+            <TextView
+                android:id="@+id/customer_floor_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/customer_layout_text_margin_top"
+                android:layout_marginStart="@dimen/customer_layout_text_margin_start"
+                android:textAlignment="textStart"
+                android:layout_toEndOf="@id/customer_image"
+                android:layout_below="@id/customer_name"
+                android:layout_centerHorizontal="true"
+                android:text="@string/floor_no" />
+            <TextView
+                android:id="@+id/customer_bed_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/customer_layout_text_margin_top"
+                android:layout_marginStart="@dimen/customer_layout_text_margin_start"
+                android:textAlignment="textStart"
+                android:layout_toEndOf="@id/customer_image"
+                android:layout_below="@id/customer_floor_no"
+                android:layout_centerHorizontal="true"
+                android:text="@string/bed_no" />
+            <TextView
+                android:id="@+id/customer_mobile_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/customer_layout_text_margin_top"
+                android:layout_marginStart="@dimen/customer_layout_text_margin_start"
+                android:textAlignment="textStart"
+                android:layout_toEndOf="@id/customer_image"
+                android:layout_below="@id/customer_bed_no"
+                android:layout_centerHorizontal="true"
+                android:text="@string/mobile_no" />
+
+            <TextView
+                android:id="@+id/customer_permit_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/customer_layout_text_margin_top"
+                android:layout_marginStart="@dimen/customer_layout_text_margin_start"
+                android:textAlignment="textStart"
+                android:layout_toEndOf="@id/customer_image"
+                android:layout_below="@id/customer_mobile_no"
+                android:layout_centerHorizontal="true"
+                android:text="@string/permit_no" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

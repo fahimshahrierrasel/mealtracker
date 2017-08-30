@@ -1,0 +1,85 @@
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.fahimshahrierrasel.mealtracker.CustomerDetailsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/floor_no_label"
+            android:text="@string/floor_no"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/floor_no"
+            android:text="@string/floor_no"
+            android:layout_toEndOf="@+id/mobile_no_label"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bed_no_label"
+            android:text="@string/bed_no"
+            android:layout_below="@+id/floor_no"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bed_no"
+            android:text="@string/bed_no"
+            android:layout_below="@+id/floor_no"
+            android:layout_toEndOf="@+id/mobile_no_label"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mobile_no_label"
+            android:layout_marginEnd="15dp"
+            android:text="@string/mobile_no"
+            android:layout_below="@+id/bed_no"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mobile_no"
+            android:text="@string/mobile_no"
+            android:layout_below="@+id/bed_no"
+
+            android:layout_toEndOf="@+id/mobile_no_label"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/permit_no_label"
+            android:text="@string/permit_no"
+            android:layout_below="@+id/mobile_no"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/permit_no"
+            android:text="@string/permit_no"
+            android:layout_below="@+id/mobile_no"
+            android:layout_toEndOf="@+id/mobile_no_label"
+            android:textSize="20sp"/>
+    </RelativeLayout>
+
+
+
+</android.support.v4.widget.NestedScrollView>
