@@ -1,10 +1,11 @@
 package com.fahimshahrierrasel.mealtracker.controllers
 
 import com.fahimshahrierrasel.mealtracker.models.Customer
+import com.fahimshahrierrasel.mealtracker.models.Payment
 import io.realm.Realm
 import io.realm.RealmResults
+import java.text.SimpleDateFormat
 import java.util.*
-import java.lang.*
 import kotlin.properties.Delegates
 
 /**
@@ -36,7 +37,7 @@ open class CustomerController() {
 
     fun getAllCustomer(): RealmResults<Customer>? {
         val query = realm.where(Customer::class.java)
-        return query.findAll();
+        return query.findAll()
     }
     fun searchCustomerBy(option: String, withKey: String): RealmResults<Customer>? {
         val query = realm.where(Customer::class.java).contains(option, withKey)
@@ -46,5 +47,19 @@ open class CustomerController() {
     fun getCustomerBy(id: String): Customer{
         val query = realm.where(Customer::class.java).equalTo("id", id)
         return query.findFirst()
+    }
+
+    fun addCustomerPayment(id: String, date: String, payment: String){
+        val query = realm.where(Customer::class.java).equalTo("id", id)
+
+        realm.beginTransaction()
+
+
+        val paymentDate = SimpleDateFormat("dd/MM/yyyy", Locale.US).parse(date)
+        val customer = query.findFirst()
+        customer.payments!!.add(Payment(paymentDate, payment.toDouble()))
+
+        realm.copyToRealmOrUpdate(customer)
+        realm.commitTransaction()
     }
 }

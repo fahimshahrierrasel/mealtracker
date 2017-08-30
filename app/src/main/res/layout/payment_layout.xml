@@ -54,7 +54,7 @@
                 android:layout_below="@id/payment_date"
                 android:text="Amount:" />
             <TextView
-                android:id="@+id/meal_type"
+                android:id="@+id/payment_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/customer_layout_text_margin_top"

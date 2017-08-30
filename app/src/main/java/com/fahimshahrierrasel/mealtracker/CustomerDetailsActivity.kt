@@ -1,33 +1,28 @@
 package com.fahimshahrierrasel.mealtracker
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.design.widget.TabLayout
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import android.support.v7.app.AppCompatActivity
-import android.text.Editable
+import android.text.SpannableStringBuilder
 import android.view.Menu
 import android.view.MenuItem
-import com.fahimshahrierrasel.mealtracker.fragments.CustomerMealFragment
-import com.fahimshahrierrasel.mealtracker.fragments.CustomerProfileFragment
-import com.fahimshahrierrasel.mealtracker.fragments.PlaceholderFragment
-import kotlinx.android.synthetic.main.activity_customer_details.*
-import com.afollestad.materialdialogs.MaterialDialog
-import android.text.InputType
-import android.text.SpannableString
-import android.text.SpannableStringBuilder
 import android.widget.EditText
-import kotlinx.android.synthetic.main.meal_input_layout.*
+import android.widget.Toast
+import com.afollestad.materialdialogs.MaterialDialog
+import com.fahimshahrierrasel.mealtracker.controllers.CustomerController
+import com.fahimshahrierrasel.mealtracker.fragments.CustomerPaymentFragment
+import com.fahimshahrierrasel.mealtracker.fragments.CustomerProfileFragment
+import kotlinx.android.synthetic.main.activity_customer_details.*
 import java.text.SimpleDateFormat
 import java.util.*
 
 
-
-
 class CustomerDetailsActivity : AppCompatActivity() {
 
+    private var customerController = CustomerController()
     private var mSectionsPagerAdapter: SectionsPagerAdapter? = null
     var customerUUID: String? = null
 
@@ -55,34 +50,39 @@ class CustomerDetailsActivity : AppCompatActivity() {
 
 
         tabs.addTab(tabs.newTab().setText("Profile"))
-        tabs.addTab(tabs.newTab().setText("Meal"))
         tabs.addTab(tabs.newTab().setText("Payment"))
         container.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabs))
 
         tabs.addOnTabSelectedListener(TabLayout.ViewPagerOnTabSelectedListener(container))
 
 
-        fab.setOnClickListener { view ->
+        fab.setOnClickListener { _ ->
 
-            val dialogView = layoutInflater.inflate(R.layout.meal_input_layout, null)
+            val dialogView = layoutInflater.inflate(R.layout.payment_input_layout, null)
 
 
-            val dateText = dialogView.findViewById<EditText>(R.id.meal_input_date)
+            val dateText = dialogView.findViewById<EditText>(R.id.payment_input_date)
 
-            dateText.text = SpannableStringBuilder(SimpleDateFormat("dd/mm/yyyy", Locale.US).format(Calendar.getInstance().time))
+            dateText.text = SpannableStringBuilder(SimpleDateFormat("dd/MM/yyyy", Locale.US).format(Calendar.getInstance().time))
 
 
             val dialog = MaterialDialog.Builder(this)
-                    .title("Meal Input")
+                    .title("Add Payment")
                     .customView(dialogView, true)
                     .positiveText("Add")
+                    .onPositive { dialog, _ ->
 
+                        val paymentDate = dialog.customView!!.findViewById<EditText>(R.id.payment_input_date)
+                        val paymentAmount = dialog.customView!!.findViewById<EditText>(R.id.paymeny_input_price)
+
+                        val mealDate = paymentDate.text.toString()
+                        val mealPrice = paymentAmount.text.toString()
+
+                        customerController.addCustomerPayment(customerUUID!!, mealDate, mealPrice)
+
+                        Toast.makeText(this, "Payment Successfully Add!", Toast.LENGTH_SHORT).show()
+                    }
             dialog.show()
-
-
-
-
-
         }
     }
 
@@ -105,14 +105,13 @@ class CustomerDetailsActivity : AppCompatActivity() {
         override fun getItem(position: Int): Fragment {
             when (position){
                 0 -> return CustomerProfileFragment.newInstance(customerUUID!!)
-                1 -> return CustomerMealFragment.newInstance(customerUUID!!)
-                else -> return PlaceholderFragment.newInstance(position + 1)
+                1 -> return CustomerPaymentFragment.newInstance(customerUUID!!)
+                else -> return CustomerProfileFragment.newInstance(customerUUID!!)
             }
-
         }
 
         override fun getCount(): Int {
-            return 3
+            return 2
         }
     }
 
