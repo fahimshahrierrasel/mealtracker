@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorHomeBackground"
-    tools:context="com.fahimshahrierrasel.mealtracker.MainActivity">
+    tools:context="com.fahimshahrierrasel.mealtracker.AllPaymentActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -21,5 +20,5 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_main" />
+    <include layout="@layout/content_all_payment" />
 </android.support.design.widget.CoordinatorLayout>

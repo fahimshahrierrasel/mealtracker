@@ -1,11 +1,14 @@
 package com.fahimshahrierrasel.mealtracker.controllers
 
+import com.fahimshahrierrasel.mealtracker.models.AllPayment
 import com.fahimshahrierrasel.mealtracker.models.Customer
 import com.fahimshahrierrasel.mealtracker.models.Payment
+import com.fahimshahrierrasel.mealtracker.models.UserPayment
 import io.realm.Realm
 import io.realm.RealmResults
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
 import kotlin.properties.Delegates
 
 /**
@@ -62,4 +65,28 @@ open class CustomerController() {
         realm.copyToRealmOrUpdate(customer)
         realm.commitTransaction()
     }
+
+    fun getAllPaymentBy(date: String): AllPayment? {
+
+        val allUserPayment = ArrayList<UserPayment>()
+        var totalAmount: Double = 0.0
+
+        val query = realm.where(Customer::class.java)
+        val allCustomer = query.findAll()
+        val paymentDate = SimpleDateFormat("dd/MM/yyyy", Locale.US).parse(date)
+        for (aCustomer in allCustomer){
+            if (aCustomer.payments != null || aCustomer.payments!!.size > 0){
+                for (aPayment in aCustomer.payments!!){
+                    if (aPayment!!.date == paymentDate){
+                        allUserPayment.add(UserPayment(aCustomer.id!!, aCustomer.name, aPayment.date, aPayment.amount))
+                        totalAmount += aPayment.amount
+                    }
+                }
+            }
+        }
+        return AllPayment(allUserPayment, totalAmount)
+    }
+
+
+
 }

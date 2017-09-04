@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity
 import android.text.SpannableStringBuilder
 import android.view.Menu
 import android.view.MenuItem
+import android.view.WindowManager
 import android.widget.EditText
 import android.widget.Toast
 import com.afollestad.materialdialogs.MaterialDialog
@@ -44,6 +45,9 @@ class CustomerDetailsActivity : AppCompatActivity() {
             customerUUID = savedInstanceState.getSerializable("CUSTOMER_UUID") as String
         }
 
+        val customerName = customerController.getCustomerBy(customerUUID!!).name
+
+        supportActionBar?.title = customerName
 
         mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager)
         container.adapter = mSectionsPagerAdapter
@@ -72,15 +76,21 @@ class CustomerDetailsActivity : AppCompatActivity() {
                     .positiveText("Add")
                     .onPositive { dialog, _ ->
 
-                        val paymentDate = dialog.customView!!.findViewById<EditText>(R.id.payment_input_date)
-                        val paymentAmount = dialog.customView!!.findViewById<EditText>(R.id.paymeny_input_price)
+                        val paymentDateEditText = dialog.customView!!.findViewById<EditText>(R.id.payment_input_date)
+                        val paymentAmountEditText = dialog.customView!!.findViewById<EditText>(R.id.paymeny_input_price)
 
-                        val mealDate = paymentDate.text.toString()
-                        val mealPrice = paymentAmount.text.toString()
+                        val paymentDate = paymentDateEditText.text.toString()
+                        val paymentAmount = paymentAmountEditText.text.toString()
 
-                        customerController.addCustomerPayment(customerUUID!!, mealDate, mealPrice)
+                        if(paymentDate.isEmpty() || paymentAmount.isEmpty()){
+                            Toast.makeText(this, "Please fill all information", Toast.LENGTH_SHORT).show()
+                        }else{
+                            customerController.addCustomerPayment(customerUUID!!, paymentDate, paymentAmount)
 
-                        Toast.makeText(this, "Payment Successfully Add!", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "Payment Successfully Add!", Toast.LENGTH_SHORT).show()
+                        }
+
+
                     }
             dialog.show()
         }
@@ -103,10 +113,10 @@ class CustomerDetailsActivity : AppCompatActivity() {
 
     inner class SectionsPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
         override fun getItem(position: Int): Fragment {
-            when (position){
-                0 -> return CustomerProfileFragment.newInstance(customerUUID!!)
-                1 -> return CustomerPaymentFragment.newInstance(customerUUID!!)
-                else -> return CustomerProfileFragment.newInstance(customerUUID!!)
+            return when (position){
+                0 -> CustomerProfileFragment.newInstance(customerUUID!!)
+                1 -> CustomerPaymentFragment.newInstance(customerUUID!!)
+                else -> CustomerProfileFragment.newInstance(customerUUID!!)
             }
         }
 

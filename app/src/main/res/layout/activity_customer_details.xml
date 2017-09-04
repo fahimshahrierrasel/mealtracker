@@ -57,12 +57,12 @@
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorAccent"
             app:layout_anchorGravity="bottom"
-            app:tabIndicatorColor="@color/colorAccent"
-            app:tabIndicatorHeight="2dp"
-            app:tabMode="fixed"
             app:tabGravity="fill"
+            app:tabIndicatorColor="@color/colorTabIndicator"
+            app:tabIndicatorHeight="3dp"
+            app:tabMode="fixed"
             app:tabSelectedTextColor="#fff"
             app:tabTextColor="#fff" />
     </FrameLayout>
@@ -72,6 +72,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="?attr/actionBarSize"
+
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <android.support.design.widget.FloatingActionButton

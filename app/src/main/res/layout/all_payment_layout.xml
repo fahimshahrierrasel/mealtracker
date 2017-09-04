@@ -23,9 +23,34 @@
             android:padding="10dp">
 
             <TextView
+                android:id="@+id/payment_username_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/customer_layout_text_margin_top"
+                android:layout_marginStart="5dp"
+                android:text="Name:"
+                android:textSize="24sp"
+                />
+
+            <TextView
+                android:id="@+id/payment_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/customer_layout_text_margin_start"
+                android:layout_marginTop="@dimen/customer_layout_text_margin_top"
+                android:layout_toEndOf="@id/amount_type_label"
+                android:text="User Name"
+                android:textAlignment="textStart"
+                android:textSize="22sp"
+                android:textStyle="bold|italic" />
+
+
+            <TextView
                 android:id="@+id/payment_date_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/payment_username"
                 android:layout_marginTop="@dimen/customer_layout_text_margin_top"
                 android:layout_marginStart="5dp"
                 android:text="Date:"
@@ -39,6 +64,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginStart="@dimen/customer_layout_text_margin_start"
                 android:layout_marginTop="@dimen/customer_layout_text_margin_top"
+                android:layout_below="@id/payment_username"
                 android:layout_toEndOf="@id/amount_type_label"
                 android:text="Pyment Date"
                 android:textAlignment="textStart"

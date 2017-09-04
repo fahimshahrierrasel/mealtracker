@@ -5,10 +5,10 @@
     <string name="features_image">Features Image</string>
     <string name="feature_name">Feature Name</string>
     <string name="user_registration">User Registration</string>
-    <string name="floor_no">Floor No</string>
-    <string name="bed_no">Bed No</string>
-    <string name="mobile_no">Mobile No</string>
-    <string name="permit_no">Permit No</string>
+    <string name="floor_no">Floor No: </string>
+    <string name="bed_no">Bed No: </string>
+    <string name="mobile_no">Mobile No: </string>
+    <string name="permit_no">Permit No: </string>
     <string name="register_customer">Register</string>
     <string name="customer_name">Customer Name</string>
     <string name="customer_image">Customer Image</string>
@@ -30,4 +30,5 @@
 
         Turpis egestas maecenas pharetra convallis posuere morbi. Diam in arcu cursus euismod. Augue lacus viverra vitae congue eu consequat. Volutpat ac tincidunt vitae semper quis lectus nulla at. Nunc aliquet bibendum enim facilisis gravida neque. Cursus turpis massa tincidunt dui ut ornare lectus sit amet. Non diam phasellus vestibulum lorem sed risus ultricies tristique nulla. Molestie ac feugiat sed lectus vestibulum mattis. Sed turpis tincidunt id aliquet risus feugiat in ante metus. Amet consectetur adipiscing elit ut aliquam purus sit amet luctus. Tempus imperdiet nulla malesuada pellentesque. Magna fermentum iaculis eu non diam phasellus vestibulum. Vitae et leo duis ut diam quam nulla porttitor massa. Sed elementum tempus egestas sed. Vel quam elementum pulvinar etiam non quam lacus. Ullamcorper a lacus vestibulum sed arcu.
     </string>
+    <string name="title_activity_all_payment">All Payment</string>
 </resources>

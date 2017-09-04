@@ -27,6 +27,7 @@ class CustomerProfileFragment() : Fragment() {
 
         val customer: Customer = customerController.getCustomerBy(customerUUID)
 
+        rootView.customer_name.text = customer.name
         rootView.floor_no.text = customer.floorNo
         rootView.bed_no.text = customer.bedNo
         rootView.mobile_no.text = customer.mobileNo
