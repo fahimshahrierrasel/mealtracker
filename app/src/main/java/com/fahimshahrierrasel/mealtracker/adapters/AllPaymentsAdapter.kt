@@ -34,7 +34,7 @@ class AllPaymentsAdapter(val context: Context, var mPayments: ArrayList<UserPaym
         val aPayment = mPayments[position]
 
         holder.paymentUserNameTextView.text = aPayment.name
-        holder.paymentDateTextView.text = SimpleDateFormat("dd/MM/yyyy", Locale.US).format(aPayment.date).toString()
+        holder.paymentDateTextView.text = aPayment.date
         holder.paymentAmountTextView.text = NumberFormat.getCurrencyInstance(Locale.US).format(aPayment.amount)
     }
 

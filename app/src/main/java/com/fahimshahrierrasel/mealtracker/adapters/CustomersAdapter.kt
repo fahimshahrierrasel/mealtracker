@@ -2,16 +2,21 @@ package com.fahimshahrierrasel.mealtracker.adapters
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
+import android.util.Base64
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import com.fahimshahrierrasel.mealtracker.CustomerDetailsActivity
 import com.fahimshahrierrasel.mealtracker.R
 import com.fahimshahrierrasel.mealtracker.models.Customer
 import io.realm.RealmResults
+import java.io.IOException
 
 /**
  * Created by fahim on 8/29/17.
@@ -35,6 +40,10 @@ class CustomersAdapter(val context: Context, var mCustomers: RealmResults<Custom
         holder.bedNoTextView.text = context.getString(R.string.bed_no_placeholder, aCustomer.bedNo)
         holder.mobileNoTextView.text = context.getString(R.string.mobile_no_placeholder, aCustomer.mobileNo)
         holder.permitNoTextView.text = context.getString(R.string.permit_no_placeholder, aCustomer.permitNo)
+        if (!aCustomer.photo.isEmpty()){
+            holder.customerImage.setImageBitmap(decodeFromBase64Image(aCustomer.photo))
+        }
+
         //holder.customerImage.setImageDrawable(ResourcesCompat.getDrawable(context.getResources(), aCustomer., null))
     }
 
@@ -42,8 +51,15 @@ class CustomersAdapter(val context: Context, var mCustomers: RealmResults<Custom
         return mCustomers.size
     }
 
+    @Throws(IOException::class)
+    fun decodeFromBase64Image(image: String): Bitmap {
+
+        val decodedByteArray = android.util.Base64.decode(image, Base64.DEFAULT)
+        return BitmapFactory.decodeByteArray(decodedByteArray, 0, decodedByteArray.size)
+    }
+
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        //var customerImage: ImageView
+        var customerImage: ImageView
         var customerNameTextView: TextView
         var floorNoTextView: TextView
         var bedNoTextView: TextView
@@ -54,7 +70,7 @@ class CustomersAdapter(val context: Context, var mCustomers: RealmResults<Custom
         init {
 
             customerCard = itemView.findViewById(R.id.customer_card)
-            //customerImage = itemView.findViewById(R.id.feature_image)
+            customerImage = itemView.findViewById(R.id.customer_image)
             customerNameTextView = itemView.findViewById(R.id.customer_name)
             floorNoTextView = itemView.findViewById(R.id.customer_floor_no)
             bedNoTextView = itemView.findViewById(R.id.customer_bed_no)
@@ -69,9 +85,11 @@ class CustomersAdapter(val context: Context, var mCustomers: RealmResults<Custom
                     val intent = Intent(context, CustomerDetailsActivity::class.java)
                     intent.putExtra("CUSTOMER_UUID", customer.id)
                     context.startActivity(intent)
-                    //Toast.makeText(context, customer.toString(), Toast.LENGTH_SHORT).show()
                 }
             }
         }
+
+
     }
+
 }

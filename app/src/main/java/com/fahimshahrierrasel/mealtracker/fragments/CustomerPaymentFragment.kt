@@ -11,6 +11,7 @@ import com.fahimshahrierrasel.mealtracker.R
 import com.fahimshahrierrasel.mealtracker.adapters.PaymentsAdapter
 import com.fahimshahrierrasel.mealtracker.controllers.CustomerController
 import com.fahimshahrierrasel.mealtracker.models.Customer
+import kotlinx.android.synthetic.main.activity_customer_details.*
 
 /**
  * Created by fahim on 8/29/17.

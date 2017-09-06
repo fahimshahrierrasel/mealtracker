@@ -40,8 +40,8 @@ class CustomerRegisterActivity() : AppCompatActivity() {
 
             customerController.registerCustomer(customerName, floorNo, bedNo, mobileNo, permitNo)
 
-
             startActivity(Intent(this, AllCustomerActivity::class.java))
+            finish()
         }
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

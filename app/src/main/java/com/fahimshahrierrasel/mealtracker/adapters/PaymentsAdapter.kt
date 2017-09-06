@@ -32,9 +32,8 @@ class PaymentsAdapter(val context: Context, var mPayments: RealmList<Payment>) :
     override fun onBindViewHolder(holder: PaymentsAdapter.ViewHolder, position: Int) {
         val aPayment = mPayments[position]
 
-        holder.paymentDateTextView.text = SimpleDateFormat("dd/MM/yyyy", Locale.US).format(aPayment.date).toString()
+        holder.paymentDateTextView.text = aPayment.date
         holder.paymentAmountTextView.text = NumberFormat.getCurrencyInstance(Locale.US).format(aPayment.amount)
-
     }
 
     override fun getItemCount(): Int {

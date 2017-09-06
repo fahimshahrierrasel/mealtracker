@@ -18,6 +18,5 @@ open class Customer : RealmObject() {
     var mobileNo: String = ""
     var permitNo: String = ""
     var photo: String = ""
-    var meals: RealmList<Meal>? = null
     var payments: RealmList<Payment>? = null
 }

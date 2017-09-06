@@ -3,6 +3,8 @@ reated by https://www.gitignore.io/api/macos,windows,androidstudio
 ### AndroidStudio ###
 # Covers files to be ignored for android development using Android Studio.
 
+google-serivces.json
+
 # Built application files
 *.apk
 *.ap_

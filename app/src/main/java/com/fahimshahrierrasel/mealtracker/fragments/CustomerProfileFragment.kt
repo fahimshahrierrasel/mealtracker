@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.fahimshahrierrasel.mealtracker.R
 import com.fahimshahrierrasel.mealtracker.controllers.CustomerController
 import com.fahimshahrierrasel.mealtracker.models.Customer
+import kotlinx.android.synthetic.main.activity_customer_details.*
 import kotlinx.android.synthetic.main.fragment_customer_profile.view.*
 
 /**
